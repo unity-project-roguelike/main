@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - terrain
+  - character
   - 
   - 
   - 
@@ -38,15 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
-  - name: Layer 1
+  - name: terrain
     uniqueID: 2425651459
     locked: 0
-  - name: Layer 2
+  - name: character
     uniqueID: 4250941897
     locked: 0
-  - name: Layer 3
+  - name: 
     uniqueID: 4189426099
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
