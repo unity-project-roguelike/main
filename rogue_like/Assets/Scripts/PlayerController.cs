@@ -6,15 +6,19 @@ using UnityEngine.Tilemaps;
 public class PlayerController : MonoBehaviour
 {
 
+    public Camera gameCamera;
     public float characterSpeed;
+    public bool characterFacingRight = true;
+
+    private SpriteRenderer sprite;
     private Rigidbody2D rigidbody2D;
-    private Vector3 characterMovement;
-    bool characterFacingRight = true;
+    private Vector3 characterMovement;    
+    private Vector2 mousePosition;
 
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        
+        sprite = GetComponent<SpriteRenderer>();
     }
 
 
@@ -23,45 +27,47 @@ public class PlayerController : MonoBehaviour
         characterMovement = Vector3.zero;
         characterMovement.x = Input.GetAxisRaw("Horizontal");
         characterMovement.y = Input.GetAxisRaw("Vertical");
+
+        mousePosition = gameCamera.ScreenToWorldPoint(Input.mousePosition);
     }
 
 
     void FixedUpdate()
     {
-        if(characterMovement != Vector3.zero)
+        Move();
+        UpdateDirection();       
+    }
+
+
+    void UpdateDirection()
+    {
+        Vector2 lookDirection = mousePosition - rigidbody2D.position;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+        
+        if((angle < 90 && angle > -90) && !characterFacingRight)
         {
-            Move();
+            FlipCharacter();
+        }
+       else 
+       if((angle > 90 || angle < -90) && characterFacingRight)
+        {
+            FlipCharacter();    
         }
     }
 
 
     void Move()
     {
-
-        if (characterMovement.x > 0 && !characterFacingRight)
-			{
-				// ... flip the player.
-				Flip();
-			}
-			// Otherwise if the input is moving the player left and the player is facing right...
-			else if (characterMovement.x < 0 && characterFacingRight)
-			{
-				// ... flip the player.
-				Flip();
-			}
-
         rigidbody2D.MovePosition(transform.position + characterMovement * characterSpeed * Time.deltaTime);
     }
 
 
-    private void Flip()
+    private void FlipCharacter()
 	{
-		
 		characterFacingRight = !characterFacingRight;
-        
-		Vector3 characterScale = transform.localScale;
-		characterScale.x *= -1;
-		transform.localScale = characterScale;
+        sprite.flipX = !sprite.flipX;
+		
 	}
+
 
 }
