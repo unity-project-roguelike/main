@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class ShootingHandler : MonoBehaviour
 {
-
     public Transform firePoint;
     public GameObject bulletPrefab;
-    public Transform weaponHandler;
-
     public float bulletForce = 20f;
+
 
     void Update()
     {
@@ -22,7 +20,7 @@ public class ShootingHandler : MonoBehaviour
 
     void ShootBullet()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, weaponHandler.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, gameObject.transform.parent.rotation);
         Rigidbody2D rigidbody2D = bullet.GetComponent<Rigidbody2D>();
         rigidbody2D.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
     }
