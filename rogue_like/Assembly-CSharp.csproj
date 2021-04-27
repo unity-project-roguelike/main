@@ -36,13 +36,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\WeaponHolderController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PickUpActionHandler.cs" />
      <Compile Include="Assets\Scripts\BulletHandler.cs" />
      <Compile Include="Assets\Scripts\GunPointController.cs" />
      <Compile Include="Assets\Scripts\ShootingHandler.cs" />
-     <Compile Include="Assets\Scripts\WeaponHolderController.cs" />
-     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
-     <Compile Include="Assets\Scripts\PickUpActionHandler.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
