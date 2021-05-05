@@ -31,4 +31,8 @@ public class BulletHandler : MonoBehaviour
     }
 
 
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
