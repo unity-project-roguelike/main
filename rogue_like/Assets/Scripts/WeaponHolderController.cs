@@ -7,9 +7,10 @@ public class WeaponHolderController : MonoBehaviour
 
     public int totalWeaponCount = 2;
     public GameObject weaponHolder;
+    public GameObject[] weapons;
 
     private int currentWeaponIndex;
-    /*private*/ public GameObject[] weapons;    
+    private int currentWeaponCount;
     private GameObject equippedWeapon;
 
 
@@ -18,12 +19,7 @@ public class WeaponHolderController : MonoBehaviour
     {
         weapons = new GameObject[totalWeaponCount];
         currentWeaponIndex = 0;
-
-        for(int i = 0; i  < totalWeaponCount; i++)
-        {
-            weapons[i] = weaponHolder.transform.GetChild(i).gameObject;
-            weapons[i].SetActive(false);
-        }
+        currentWeaponCount = 0;
     }
 
     // Update is called once per frame
@@ -32,25 +28,31 @@ public class WeaponHolderController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             currentWeaponIndex = 0;
-            equippedWeapon = weapons[currentWeaponIndex];     
-            DeactivateOtherWeapons(currentWeaponIndex);
-            weapons[currentWeaponIndex].SetActive(true);        
+            ChangeWeapon();       
         }
         else if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             currentWeaponIndex = 1;
-            equippedWeapon = weapons[currentWeaponIndex]; 
-            DeactivateOtherWeapons(currentWeaponIndex);
-            weapons[currentWeaponIndex].SetActive(true); 
+            ChangeWeapon();
         }        
     }
 
 
-    private void DeactivateOtherWeapons(int currentIndex)
+    private void ChangeWeapon()
+    {
+        equippedWeapon = weapons[currentWeaponIndex];
+        DeactivateOtherWeapons();
+
+        if(weapons[currentWeaponIndex] != null)
+            weapons[currentWeaponIndex].SetActive(true);
+    }
+
+
+    private void DeactivateOtherWeapons()
     {
         for(int i = 0; i  < totalWeaponCount; i++)
         {
-            if( i != currentIndex)
+            if( i != currentWeaponIndex)
             {
                 if(weapons[i] != null)
                 {
@@ -62,8 +64,37 @@ public class WeaponHolderController : MonoBehaviour
     }
 
 
-    public GameObject[] GetWeapons()
+    public bool AddWeapon(GameObject weaponPrefab)
     {
-        return weapons;
+        if (currentWeaponCount < totalWeaponCount)
+        {
+            for (int i = 0; i < totalWeaponCount; i++)
+            {
+                if (weapons[i] == null)
+                {
+                    GameObject weapon = Instantiate(weaponPrefab, transform.position, weaponHolder.transform.rotation);
+                    weapons[i] = weapon;
+                    currentWeaponCount++;
+
+                    weapon.transform.SetParent(weaponHolder.transform);
+
+                    if (GetComponentInParent<SpriteRenderer>().flipX == true)
+                    {
+                        weapon.transform.localScale = new Vector3(  weaponHolder.transform.localScale.x,
+                                                                    weaponHolder.transform.localScale.y * -1,
+                                                                    weaponHolder.transform.localScale.z);
+                    }
+                    else
+                    {
+                        weapon.transform.localScale = weaponHolder.transform.localScale;
+                    }
+
+                    weapon.SetActive(false);
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }

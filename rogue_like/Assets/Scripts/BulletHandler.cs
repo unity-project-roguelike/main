@@ -6,26 +6,28 @@ public class BulletHandler : MonoBehaviour
 {
 
     public GameObject hitEffect;
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
-
+    
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        hitEffectPlay();
+        if(collider.tag == "Obstacle")
+        {
+            hitEffectPlay();
+        }
+    }
+
+
+    void OnTriggerExit2D()
+    {
+        Destroy(gameObject);
     }
 
 
     void hitEffectPlay()
     {
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-        hitEffect.GetComponent<ParticleSystem>().Play();
-        Destroy(hitEffect, 5f);
-        Destroy(gameObject);
-
+        effect.GetComponent<ParticleSystem>().Play();
+        Destroy(effect, 5f);
     }
 
 

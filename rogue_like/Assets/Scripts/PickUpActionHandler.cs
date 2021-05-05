@@ -6,38 +6,24 @@ public class PickUpActionHandler : MonoBehaviour
 {
     public GameObject weaponPrefab;
 
-    private WeaponHolderController weaponHolder;
+    private WeaponHolderController weaponHolderController;
+
 
 
     void Start()
     {
-        weaponHolder = GameObject.FindGameObjectWithTag("Player").GetComponent<WeaponHolderController>();
+        weaponHolderController = GameObject.FindGameObjectWithTag("Player").GetComponent<WeaponHolderController>();
     }
 
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        GameObject[] weapons = weaponHolder.GetWeapons();
-        Debug.Log("collide");
-
-        if(collider.CompareTag("Player"))
+        if(collider.gameObject.CompareTag("Player"))
         {
-            for (int i = 0; i < weaponHolder.totalWeaponCount; i++)
+            if(weaponHolderController.AddWeapon(weaponPrefab))
             {
-                if(weapons[i] == null)
-                {
-                    weapons[i] = weaponPrefab;
-                    Instantiate(weaponPrefab, weaponHolder.transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                    break;
-                }
+                gameObject.SetActive(false);
             }
         }
-    }
-
-
-    void Update()
-    {
-        
     }
 }
