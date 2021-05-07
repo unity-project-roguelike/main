@@ -89,6 +89,10 @@ public class WeaponHolderController : MonoBehaviour
                         weapon.transform.localScale = weaponHolder.transform.localScale;
                     }
 
+                    weapon.transform.localScale = new Vector3(  weapon.transform.localScale.x  * 0.6f,
+                                                                weapon.transform.localScale.y * 0.6f,
+                                                                weapon.transform.localScale.z  * 0.6f);
+
                     weapon.SetActive(false);
                     return true;
                 }
