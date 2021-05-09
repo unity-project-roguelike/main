@@ -12,6 +12,7 @@ public class WeaponHolderController : MonoBehaviour
     private int currentWeaponIndex;
     private int currentWeaponCount;
     private GameObject equippedWeapon;
+    private Vector3 playerScale;
 
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class WeaponHolderController : MonoBehaviour
         weapons = new GameObject[totalWeaponCount];
         currentWeaponIndex = 0;
         currentWeaponCount = 0;
+        playerScale = GetComponentInParent<Transform>().localScale;
     }
 
     // Update is called once per frame
@@ -72,26 +74,12 @@ public class WeaponHolderController : MonoBehaviour
             {
                 if (weapons[i] == null)
                 {
-                    GameObject weapon = Instantiate(weaponPrefab, transform.position, weaponHolder.transform.rotation);
+                    GameObject weapon = Instantiate(weaponPrefab, weaponHolder.transform.position, weaponHolder.transform.rotation);
                     weapons[i] = weapon;
                     currentWeaponCount++;
 
                     weapon.transform.SetParent(weaponHolder.transform);
-
-                    if (GetComponentInParent<SpriteRenderer>().flipX == true)
-                    {
-                        weapon.transform.localScale = new Vector3(  weaponHolder.transform.localScale.x,
-                                                                    weaponHolder.transform.localScale.y * -1,
-                                                                    weaponHolder.transform.localScale.z);
-                    }
-                    else
-                    {
-                        weapon.transform.localScale = weaponHolder.transform.localScale;
-                    }
-
-                    weapon.transform.localScale = new Vector3(  weapon.transform.localScale.x  * 0.6f,
-                                                                weapon.transform.localScale.y * 0.6f,
-                                                                weapon.transform.localScale.z  * 0.6f);
+                    weapon.transform.localScale = playerScale;                 
 
                     weapon.SetActive(false);
                     return true;

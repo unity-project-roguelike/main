@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class PlayerController : MonoBehaviour
 {
 
+    public Animator animator;
     public Camera gameCamera;
     public float characterSpeed;
     public bool characterFacingRight = true;
@@ -29,6 +30,15 @@ public class PlayerController : MonoBehaviour
         characterMovement.y = Input.GetAxisRaw("Vertical");
 
         mousePosition = gameCamera.ScreenToWorldPoint(Input.mousePosition);
+
+        if(characterMovement.x == 0 && characterMovement.y == 0)
+        {
+            animator.SetBool("isPlayerRunning", false);
+        }
+        else
+        {
+            animator.SetBool("isPlayerRunning", true);
+        }        
     }
 
 
