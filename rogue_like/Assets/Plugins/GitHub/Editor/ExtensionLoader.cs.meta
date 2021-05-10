@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: dae2ecee8a704dd59797e26554ff8606
 timeCreated: 1534504082
+<<<<<<< HEAD
 licenseType: Free
+=======
+licenseType: Store
+>>>>>>> 8eeeeba8bc0d9094f74c9dc340c04cbb2937ddde
 PluginImporter:
   serializedVersion: 2
   iconMap: {}
