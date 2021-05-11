@@ -13,23 +13,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-<<<<<<< HEAD
-  lastUpdatedAtString: 2021-05-10T11:39:48.685+02:00
-  initializedAtString: 2021-05-10T11:39:48.679+02:00
+  lastUpdatedAtString: 2021-05-11T17:33:20.974+02:00
+  initializedAtString: 2021-05-11T14:22:02.740+02:00
   localBranches:
   - name: main
     tracking: origin/main
-  - name: Piskorki
-    tracking: 
-=======
-  lastUpdatedAtString: 2021-05-10T11:21:53.878+02:00
-  initializedAtString: 2021-05-10T11:18:53.553+02:00
-  localBranches:
-  - name: Kawalarz
-    tracking: origin/Kawalarz
-  - name: main
-    tracking: origin/main
->>>>>>> 8eeeeba8bc0d9094f74c9dc340c04cbb2937ddde
   remoteBranches:
   - name: origin/HEAD
     tracking: '[None]'
@@ -37,11 +25,8 @@ MonoBehaviour:
     tracking: '[None]'
   - name: origin/main
     tracking: '[None]'
-<<<<<<< HEAD
   - name: origin/Piskorki
     tracking: '[None]'
-=======
->>>>>>> 8eeeeba8bc0d9094f74c9dc340c04cbb2937ddde
   remotes:
   - name: origin
     url: https://github.com/unity-project-roguelike/main.git
@@ -52,34 +37,13 @@ MonoBehaviour:
     token: 
   localConfigBranches:
     keys:
-<<<<<<< HEAD
     - main
-    - Piskorki
     values:
     - name: main
       remote:
         name: origin
         url: https://github.com/unity-project-roguelike/main.git
       trackingBranch: main
-    - name: Piskorki
-      remote:
-        name: 
-        url: 
-=======
-    - Kawalarz
-    - main
-    values:
-    - name: Kawalarz
-      remote:
-        name: origin
-        url: https://github.com/unity-project-roguelike/main.git
-      trackingBranch: Kawalarz
-    - name: main
-      remote:
-        name: origin
-        url: https://github.com/unity-project-roguelike/main.git
->>>>>>> 8eeeeba8bc0d9094f74c9dc340c04cbb2937ddde
-      trackingBranch: 
   remoteConfigBranches:
     keys:
     - origin
@@ -88,10 +52,7 @@ MonoBehaviour:
       - HEAD
       - Kawalarz
       - main
-<<<<<<< HEAD
       - Piskorki
-=======
->>>>>>> 8eeeeba8bc0d9094f74c9dc340c04cbb2937ddde
     subKeyValues:
     - Values:
       - name: HEAD
@@ -109,14 +70,11 @@ MonoBehaviour:
           name: origin
           url: https://github.com/unity-project-roguelike/main.git
         trackingBranch: 
-<<<<<<< HEAD
       - name: Piskorki
         remote:
           name: origin
           url: https://github.com/unity-project-roguelike/main.git
         trackingBranch: 
-=======
->>>>>>> 8eeeeba8bc0d9094f74c9dc340c04cbb2937ddde
   configRemotes:
     keys:
     - origin

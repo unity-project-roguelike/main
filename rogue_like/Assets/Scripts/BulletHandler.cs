@@ -13,13 +13,17 @@ public class BulletHandler : MonoBehaviour
         if(collider.tag == "Obstacle")
         {
             hitEffectPlay();
+            Destroy(gameObject);
         }
     }
 
 
-    void OnTriggerExit2D()
+    void OnTriggerExit2D(Collider2D collider)
     {
-        Destroy(gameObject);
+         if(collider.tag == "Obstacle")
+        {
+            Destroy(gameObject);
+        }
     }
 
 

@@ -13,13 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-<<<<<<< HEAD
-  lastUpdatedAtString: 2021-05-10T11:40:09.870+02:00
-  initializedAtString: 2021-05-10T11:39:32.674+02:00
-=======
-  lastUpdatedAtString: 2021-05-10T11:18:53.548+02:00
-  initializedAtString: 2021-05-10T11:18:53.548+02:00
->>>>>>> 8eeeeba8bc0d9094f74c9dc340c04cbb2937ddde
+  lastUpdatedAtString: 2021-05-11T17:33:19.883+02:00
+  initializedAtString: 2021-05-11T14:22:01.523+02:00
   currentGitRemote:
     name: origin
     url: https://github.com/unity-project-roguelike/main.git
@@ -29,7 +24,6 @@ MonoBehaviour:
     function: 0
     token: 
   currentGitBranch:
-<<<<<<< HEAD
     name: main
     tracking: origin/main
   currentConfigBranch:
@@ -38,16 +32,6 @@ MonoBehaviour:
       name: origin
       url: https://github.com/unity-project-roguelike/main.git
     trackingBranch: main
-=======
-    name: Kawalarz
-    tracking: origin/Kawalarz
-  currentConfigBranch:
-    name: Kawalarz
-    remote:
-      name: origin
-      url: https://github.com/unity-project-roguelike/main.git
-    trackingBranch: Kawalarz
->>>>>>> 8eeeeba8bc0d9094f74c9dc340c04cbb2937ddde
   currentConfigRemote:
     name: origin
     url: https://github.com/unity-project-roguelike/main.git

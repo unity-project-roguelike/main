@@ -286,6 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6426610718262685427}
   - component: {fileID: 5254953477335043327}
+  - component: {fileID: 1829004623180190237}
   m_Layer: 7
   m_Name: SHOTGUN_PREFAB
   m_TagString: Untagged
@@ -300,9 +301,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7720770410598505101}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.42, y: -0.319, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 9000509020731968727}
   - {fileID: 2018418781103984567}
@@ -326,4 +327,28 @@ MonoBehaviour:
   firePoint: {fileID: 3872690766554671875}
   bulletPrefab: {fileID: 6597104270963785178, guid: f8985b9a11885e84480223827b18bcc7,
     type: 3}
-  bulletForce: 5
+  bulletForce: 150
+  fireRate: 1
+  minimumShootAngle: -10
+  maximumShootAngle: 10
+  gunType: 0
+  weaponAnimator: {fileID: 1829004623180190237}
+--- !u!95 &1829004623180190237
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720770410598505101}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4d786c6732d93145a162e613fd79d10, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

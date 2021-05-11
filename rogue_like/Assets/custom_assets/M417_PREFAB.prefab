@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4597867309988699596}
   - component: {fileID: 3318123556134485952}
+  - component: {fileID: 4872882299161594908}
   m_Layer: 7
   m_Name: M417_PREFAB
   m_TagString: Untagged
@@ -24,9 +25,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992094130757708210}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1876088820784414696}
   - {fileID: 8855153000527445128}
@@ -50,7 +51,31 @@ MonoBehaviour:
   firePoint: {fileID: 6007661341164116028}
   bulletPrefab: {fileID: 6597104270963785178, guid: f8985b9a11885e84480223827b18bcc7,
     type: 3}
-  bulletForce: 20
+  bulletForce: 600
+  fireRate: 1
+  minimumShootAngle: 0
+  maximumShootAngle: 0
+  gunType: 1
+  weaponAnimator: {fileID: 4872882299161594908}
+--- !u!95 &4872882299161594908
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992094130757708210}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ee3614ba7760848429ac09d13855e99a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2795955843005581577
 GameObject:
   m_ObjectHideFlags: 0
